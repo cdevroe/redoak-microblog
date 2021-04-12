@@ -1,0 +1,75 @@
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta content="{{ .Site.Author.name }}" name="author">
+
+    <!-- Red Oak Stuff -->
+    <meta name="microblog-theme" content="Red Oak 2021.0.1">
+    <meta name="designer" content="Kyle Ruane and Colin Devroe">
+
+    <title>
+        {{- block "title" . -}}
+        {{- .Site.Title -}}
+        {{- if .Title }}
+        - {{ .Title }}
+        {{- end -}}
+        {{- end -}}
+    </title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="javascripts/foundation_4/stylesheets/normalize.css" />
+	
+    <link href="{{ "assets/css/style.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+    <link href="{{ "assets/css/microblog.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "custom.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
+
+	<link rel="stylesheet" href="{{ "assets/css/offcanvas.css" | relURL }}?{{ .Site.Params.theme_seconds }}" />
+	<link rel="stylesheet" href="{{ "assets/css/barlicons.css" | relURL }}?{{ .Site.Params.theme_seconds }}" />
+
+    <!-- Google Fonts -->
+	<link href='//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+
+	<!-- RSS -->
+    {{ if .RSSLink -}}
+        <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+        <link href="{{ "podcast.xml" | absURL }}" rel="alternate" type="application/rss+xml" title="Podcast" />
+        <link rel="alternate" type="application/json" title="{{ .Site.Title }}" href="{{ "feed.json" | absURL }}" />
+        <link rel="EditURI" type="application/rsd+xml" href="{{ "rsd.xml" | absURL }}" />
+    {{ end -}}
+
+    <!-- Links -->
+    <link rel="me" href="https://micro.blog/{{ .Site.Author.username }}" />
+
+    {{ with .Site.Params.twitter_username }}
+        <link rel="me" href="https://twitter.com/{{ . }}" />
+    {{ end }}
+    {{ with .Site.Params.github_username }}
+        <link rel="me" href="https://github.com/{{ . }}" />
+    {{ end }}
+    {{ with .Site.Params.instagram_username }}
+        <link rel="me" href="https://instagram.com/{{ . }}" />
+    {{ end }}
+
+    <link rel="authorization_endpoint" href="https://micro.blog/indieauth/auth" />
+    <link rel="token_endpoint" href="https://micro.blog/indieauth/token" />
+    <link rel="micropub" href="https://micro.blog/micropub" />
+    <link rel="microsub" href="https://micro.blog/microsub" />
+    <link rel="webmention" href="https://micro.blog/webmention" />
+    <link rel="subscribe" href="https://micro.blog/users/follow" />
+
+    <!-- M.b Plugins -->
+	{{ range .Site.Params.plugins_css }}
+        <link rel="stylesheet" href="{{ . }}" />
+    {{ end }}
+    {{ range $filename := .Site.Params.plugins_html }}
+        {{ partial $filename $ }}
+    {{ end }}
+
+    <script src="{{ "assets/js/foundation_4/javascripts/vendor/custom.modernizr.js" | relURL }}?{{ .Site.Params.theme_seconds }}"></script>
+
+</head>

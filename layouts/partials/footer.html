@@ -1,0 +1,22 @@
+<!-- Footer -->
+<div class="row">
+    <footer>
+        <div class="footer-links group hide-for-small">
+            <a class="back-to-top" href="#top"><i class="barley-icon-circle-arrow-up"></i>Back to Top</a>
+            <ul class="footer-nav">
+                <li class="current"><a class="current" href="/" title="Go to homepage">Blog</a></li>
+                {{ range .Site.Menus.main }}
+                    {{ if .Page.Params.redirect_url }}
+                        <li><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
+                    {{ else }}
+                        <li><a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+        <div class="final group">
+            <a class="barley-badge" href="http://getbarley.com"><i class="barley-icon-barley"></i>Powered by Barley</a>
+            <span class="copyright" data-barley="footer_copyright" data-barley-editor="mini">&copy; Jane  Doe. All rights reserved.</span>
+        </div>
+    </footer>
+</div>
