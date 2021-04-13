@@ -2785,7 +2785,7 @@ img.reveal-modal {
   .photo-album-container:nth-child(even) {
     float: right; }
   .photo-album-container:nth-child(odd) {
-    clear: both; }
+    /* clear: both; */ }
 
 .photo-album-cover {
   padding: 0;
