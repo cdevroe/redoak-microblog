@@ -1,9 +1,5 @@
 {{ define "main" }}
-	<!-- Header -->
-	<header>
-		<div class="identity show-for-small" id="identityTop"></div>
-		<a class="menu-toggle show-for-small sidebar-button" id="sidebarButton"><i class="barley-icon-reorder"></i></a>
-	</header>
+	{{ partial "header.html" . }}
 
 <div class="row wrapper">
 
@@ -22,7 +18,7 @@
 					    <h2>{{ .Title }}</h2>
 						<div class="meta">
 							<span class="meta-publish-date">
-								<i class="barley-icon-time"></i><span class="published_on">{{ .Date.Format "January 2, 2006" }}</span>
+								<i class="material-icons">schedule</i><span class="published_on">{{ .Date.Format "January 2, 2006" }}</span>
 							</span>
 						</div>
 	
@@ -35,7 +31,7 @@
 						</div>
 						<div class="meta">
 							<span class="meta-publish-date">
-								<i class="barley-icon-time"></i><span class="published_on">{{ .Date.Format "January 2, 2006" }}</span>
+								<i class="material-icons">schedule</i><span class="published_on">{{ .Date.Format "January 2, 2006" }}</span>
 							</span>
 						</div>
                     {{ end }}

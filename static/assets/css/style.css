@@ -2060,7 +2060,7 @@ article, section {
         color: #444444 !important;
         border: none; }
   article p, section p {
-    font-size: 15px; }
+    font-size: 17px; }
   article a:hover, section a:hover {
     border-bottom: 1px dotted rgba(201, 119, 0, 0.65); }
   article a.read-more, section a.read-more {

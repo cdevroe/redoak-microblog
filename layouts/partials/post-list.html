@@ -8,7 +8,7 @@
                 <span class="e-content">{{ .Content }}</span>
                 <div class="meta">
                     <span class="meta-publish-date">
-                        <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                        <i class="material-icons">schedule</i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
                     </span>
                 </div>
             
@@ -21,13 +21,13 @@
         {{ $pag := $.Paginator }}
             {{ if or $pag.HasPrev $pag.HasNext }}
                 {{ if $pag.HasPrev }}
-                    <a href="{{ $pag.Prev.URL }}" class="newer"><span title="Older Posts"><i class="barley-icon-angle-left"></i></span></a>
+                    <a href="{{ $pag.Prev.URL }}" class="newer"><span title="Older Posts"><i class="material-icons">chevron_left</i></span></a>
                 {{ end }}
             <!-- endprevious -->
 
             <!-- next -->
             {{ if $pag.HasNext }}
-                <a href="{{ $pag.Next.URL }}" class="older"><span title="Newer Posts"><i class="barley-icon-angle-right"></i></span></a>
+                <a href="{{ $pag.Next.URL }}" class="older"><span title="Newer Posts"><i class="material-icons">chevron_right</i></span></a>
             {{ end }}
             <!-- endnext -->
         {{ end }}
@@ -42,7 +42,7 @@
                 {{ end }}
                     <div class="meta">
                         <span class="meta-publish-date">
-                            <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                            <i class="material-icons">schedule</i><<span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
                         </span>
                     </div>
                     <span class="e-content">{{ .Content }}</span>
