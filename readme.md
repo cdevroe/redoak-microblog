@@ -1,6 +1,6 @@
 # Red Oak for Micro.blog
 
-Written for [Micro.blog](https://micro.blog) by [Colin Devroe](http://cdevroe.com/), design forked from Red Oak for WordPress (coming soon) by Colin Devroe and [Kyle Ruane](http://kyleruane.com/).
+Written for [Micro.blog](https://micro.blog) by [Colin Devroe](http://cdevroe.com/) - [@cdevroe](https://micro.blog/cdevroe), design forked from Red Oak for WordPress (coming soon) by Colin Devroe and [Kyle Ruane](http://kyleruane.com/).
 
 [View demo site](http://redoak.micro.blog)
 
