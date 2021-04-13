@@ -29,8 +29,8 @@
     <div class="sidebar-zone nav-link-list">
         <h3>Pages</h3>
         <ul>
-            <li class='current'><a class='current' href="/" title="Go to homepage">Blog</a></li>
-            { range .Site.Menus.main }}
+            <li class="current"><a class="current" href="/" title="Go to homepage">Blog</a></li>
+            {{ range .Site.Menus.main }}
                 {{ if .Page.Params.redirect_url }}
                     <li><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
                 {{ else }}
