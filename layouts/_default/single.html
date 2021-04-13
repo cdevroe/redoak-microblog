@@ -1,0 +1,44 @@
+{{ define "main" }}
+    <!-- Header -->
+    <header>
+        <div class="identity show-for-small" id="identityTop"></div>
+        <a class="menu-toggle show-for-small sidebar-button" id="sidebarButton"><i class="barley-icon-reorder"></i></a>
+    </header>
+
+    <div class="row wrapper">
+
+    <!-- Start Main Page Content -->
+    <section role="main">
+
+        <!-- Top Color Strip -->
+        <div class="row top-strip"></div>
+
+        <div class="row content">
+            <div class="large-8 columns main" id="left-col">
+                <article class="h-entry">
+                        <h2>{{ .Title }}</h2>
+                        <span class="e-content">{{ .Content }}</span>
+                    
+                </article>
+            </div>
+            
+            {{ partial "sidebar.html" . }}
+        </div>
+
+        {{ partial "footer.html" . }}
+    
+    </section>
+	<!-- End Main Page Content -->
+
+	<!-- Mobile Nav -->
+	<section role="complementary">
+		<div id="sideMenu" class="sidebar show-for-small"></div>
+	</section>
+
+</div>
+
+{{ partial "footer-scripts.html" }}
+
+</body>
+</html>
+{{ end }}

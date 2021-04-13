@@ -4,21 +4,13 @@
         <article class="h-entry">
             {{ if .Title }}
                 <h2><a href="{{ .Permalink }}" title="Link to {{ .Title }}">{{ .Title }}</a></h2>
-                <div class="meta">
-                    <span class="meta-publish-date">
-                        <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
-                    </span>
-                </div>
-                <span class="e-content">{{ .Content }}</span>
-            {{ else }}
-                <span class="e-content">{{ .Content }}</span>
-                <div class="meta">
-                    <span class="meta-publish-date">
-                        <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
-                    </span>
-                </div>
-                <!-- barleyglyph --><p><a href="{{ .Permalink }}" title="Link to {{ .Title }}">#</a></p><!-- endbarleyglyph -->
             {{ end }}
+                <span class="e-content">{{ .Content }}</span>
+                <div class="meta">
+                    <span class="meta-publish-date">
+                        <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                    </span>
+                </div>
             
         </article>
     {{ end }}
@@ -47,21 +39,13 @@
             <article class="h-entry">
                 {{ if .Title }}
                     <h2><a href="{{ .Permalink }}" title="Link to {{ .Title }}">{{ .Title }}</a></h2>
-                    <div class="meta">
-                        <span class="meta-publish-date">
-                            <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
-                        </span>
-                    </div>
-                    <span class="e-content">{{ .Content }}</span>
-                {{ else }}
-                    <span class="e-content">{{ .Content }}</span>
-                    <div class="meta">
-                        <span class="meta-publish-date">
-                            <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
-                        </span>
-                    </div>
-                    <!-- barleyglyph --><p><a href="{{ .Permalink }}" title="Link to {{ .Title }}">#</a></p><!-- endbarleyglyph -->
                 {{ end }}
+                    <div class="meta">
+                        <span class="meta-publish-date">
+                            <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                        </span>
+                    </div>
+                    <span class="e-content">{{ .Content }}</span>
             </article>
         {{ end }}
     {{ end }}

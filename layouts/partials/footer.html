@@ -15,8 +15,8 @@
             </ul>
         </div>
         <div class="final group">
+            {{ .Site.Params.description | safeHTML }} <br />
             <a class="barley-badge" href="https://micro.blog">Powered by Micro.blog</a>
-            <span class="copyright">{{ .Site.Params.description | safeHTML }}</span>
         </div>
     </footer>
 </div>
