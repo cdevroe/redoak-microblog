@@ -13,12 +13,12 @@
             <div class="large-8 columns main" id="left-col">
                 <article>
                     <h2>Photos</h2>
-                    <div class="photo-album-container">
+                    
                     {{ if .Site.Params.paginate_home }}
                         {{- $list := where .Pages ".Params.photos" "!=" nil -}}
                         {{- $len := (len $list) -}}
                         {{ range $index, $value := $list }}
-                            
+                        <div class="photo-album-container">        
                                 <div class="photo-album-cover">
                                     <a href="{{ .Permalink }}">
                                         {{ range first 1 .Params.photos }}
@@ -27,9 +27,8 @@
                                     </a>
                                 </div>
                                 <a class="photo-album-title" href="{{ .Permalink }}">{{ .Title }} <i class="material-icons">chevron_right</i></a>
-                            
+                            </div>
                         {{ end }}
-                    </div>
 
                             <!-- Paging -->
                             <div class="paging group">
@@ -51,11 +50,11 @@
                         
 
                         {{ else }}
-                        <div class="photo-album-container">
+                        
                             {{- $list := where .Pages ".Params.photos" "!=" nil -}}
                             {{- $len := (len $list) -}}
                             {{ range $index, $value := $list }}
-                                
+                            <div class="photo-album-container">        
                                     <div class="photo-album-cover">
                                         <a href="{{ .Permalink }}">
                                             {{ range first 1 .Params.photos }}
@@ -64,9 +63,8 @@
                                         </a>
                                     </div>
                                     <a class="photo-album-title" href="{{ .Permalink }}">{{ .Title }} <i class="material-icons">chevron_right</i></a>
-                                
+                            </div>
                             {{ end }}
-                        </div>
                         {{ end }}
                     
                 </article>
