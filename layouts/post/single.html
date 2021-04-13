@@ -19,24 +19,33 @@
 			<!-- Post Content -->
 				<article class="group">
                     {{ if .Title }}
-					    <h2>The Title of Your New Blog Post</h2>
+					    <h2>{{ .Title }}</h2>
+						<div class="meta">
+							<span class="meta-publish-date">
+								<i class="barley-icon-time"></i><span class="published_on">{{ .Date.Format "January 2, 2006" }}</span>
+							</span>
+						</div>
+	
+						<div>
+							{{ .Content }}
+						</div>
+					{{ else }}
+						<div>
+							{{ .Content }}
+						</div>
+						<div class="meta">
+							<span class="meta-publish-date">
+								<i class="barley-icon-time"></i><span class="published_on">{{ .Date.Format "January 2, 2006" }}</span>
+							</span>
+						</div>
                     {{ end }}
-
-					<div class="meta">
-						<span class="meta-publish-date">
-							<i class="barley-icon-time"></i><span class="published_on">{{ .Date.Format "January 2, 2006" }}</span>
-						</span>
-					</div>
-
-					<div>
-						{{ .Content }}
-					</div>
 
 					{{ if .Site.Params.include_conversation }}
 						<script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
 					{{ end }}
 				</article>
 
+				{{ partial "sidebar.html" . }}
             </div>
 			
             {{ partial "sidebar.html" }}
