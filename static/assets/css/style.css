@@ -2099,7 +2099,7 @@ article, section {
       article .meta span i, section .meta span i {
         color: rgba(0, 0, 0, 0.25);
         font-size: 20px;
-        vertical-align: -1px;
+        vertical-align: middle;
         margin-right: 6px; }
       article .meta span a, section .meta span a {
         color: #b57519;

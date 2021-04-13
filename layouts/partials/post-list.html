@@ -8,7 +8,7 @@
                 <span class="e-content">{{ .Content }}</span>
                 <div class="meta">
                     <span class="meta-publish-date">
-                        <i class="material-icons">schedule</i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                        <i class="material-icons">schedule</i><span class="dt-published"><a href="{{ .Permalink }}">{{ .Date.Format "January 2, 2006" }}</a></span>
                     </span>
                 </div>
             
@@ -42,7 +42,7 @@
                 {{ end }}
                     <div class="meta">
                         <span class="meta-publish-date">
-                            <i class="material-icons">schedule</i><<span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                            <i class="material-icons">schedule</i><span class="dt-published"><a href="{{ .Permalink }}">{{ .Date.Format "January 2, 2006" }}</a></span>
                         </span>
                     </div>
                     <span class="e-content">{{ .Content }}</span>
