@@ -3,8 +3,8 @@
     <div id="sideNav">
     <div class="hide-for-small">
         <div class="sidebar-zone identity" id="identitySide">
-            <span data-barley-editor="image" data-barley="sidebar_image">
-                <a href="/"><img src="/images/sample_photo.jpg" class="photo"></a>
+            <span>
+                <a href="/"><img src="{{ .Site.Author.avatar }}" class="photo" /></a>
             </span>
             <!--<a class='current' href="index.html">-->
                 <!-- Photo --><!--<img src="/images/sample_photo.jpg" class="photo"> -->
@@ -15,11 +15,11 @@
     </div>
     <div class="sidebar-zone intro hide-for-small">
         <!-- notempty:redoak_index_title -->
-        <h3 data-barley="redoak_index_title" data-barley-editor="mini">Red Oak</h3>
+        <h3>{{ . Site.Title }}</h3>
         <!-- endnotempty -->
         <!-- notempty:sidebar_about -->
-        <div data-barley="sidebar_about" data-barley-editor="plus">
-            <p>A responsive blogging theme built for Barley</p>
+        <div>
+            {{ .Site.Params.description | safeHTML }}
         </div>
         <!-- endnotempty -->
     </div>
@@ -28,37 +28,39 @@
     </div>
     <div class="sidebar-zone nav-link-list">
         <h3>Pages</h3>
-        <ul data-barley-navigation="left">
-            <!-- barleynav -->
-            <li class='current'><a class='current' href="index.html" title="Go to homepage">Blog</a></li>
-            <li><a href="about.html" title="Go to About page">About</a></li>
-            <li><a href="photos.html" title="Go to Photo Albums">Photo Albums</a></li>
-            <!-- endbarleynav -->
+        <ul>
+            <li class='current'><a class='current' href="/" title="Go to homepage">Blog</a></li>
+            { range .Site.Menus.main }}
+                {{ if .Page.Params.redirect_url }}
+                    <li><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
+                {{ else }}
+                    <li><a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
+                {{ end }}
+            {{ end }}
         </ul>
     </div>
-    <!-- notempty:redoak_sidebar_section_social -->
     <div class="sidebar-zone nav-list">
         <span data-barley="redoak_sidebar_section_social" data-barley-editor="advanced">
             <h3>Find Me On</h3>
             <ul>
-                <li><a href="http://twitter.com/getbarley" title="Follow me on Twitter" rel="me">@getbarley</a></li>
-                <li><a href="http://github.com/plainmade/" title="Follow me on GitHub" rel="me">github.com/plainmade</a></li>
+                {{ with .Site.Params.twitter_username }}
+                    <li><a href="https://twitter.com/{{ . }}"><i class="fab fa-twitter"></i></a></li>
+                {{ end }}
+                {{ with .Site.Params.linkedin_username }}
+                    <li><a href="https://linkedin.com/{{ . }}"><i class="fab fa-linkedin"></i></a></li>
+                {{ end }}
+                {{ with .Site.Params.instagram_username }}
+                    <li><a href="https://instagram.com/{{ . }}"><i class="fab fa-instagram"></i></a></li>
+                {{ end }}
+                {{ with .Site.Params.github_username }}
+                    <li><a href="https://github.com/{{ . }}"><i class="fab fa-github"></i></a></li>
+                {{ end }}
+                {{ with .Site.Author.username }}
+                    <li><a href="https://micro.blog/{{ . }}"><i class="fab fa-microblog"></i></a></li>
+                {{ end }}
             </ul>
         </span>
     </div>
-    <!-- endnotempty -->
-
-    <!-- notempty:redoak_sidebar_section_links -->
-    <div class="sidebar-zone nav-list">
-        <span data-barley="redoak_sidebar_section_links" data-barley-editor="advanced">
-            <h3>Links</h3>
-            <ul>
-                <li><a href="http://plainmade.com/">Made by Plain</a></li>
-                <li><a href="http://getbarley.com/">Powered by Barley</i></a></li>
-            </ul>
-        </span>
-    </div>
-    <!-- endnotempty -->
 </div>
 </div>
 <!-- end Sidebar -->

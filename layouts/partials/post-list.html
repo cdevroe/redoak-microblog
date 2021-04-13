@@ -2,14 +2,24 @@
     {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
     {{ range $paginator.Pages }}
         <article class="h-entry">
-            <h2><a href="{{ .Permalink }}" title="Link to {{ .Title }}">{{ .Title }}</a></h2>
-            <div class="meta">
-                <span class="meta-publish-date">
-                    <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
-                </span>
-            </div>
-            <span class="e-content">{{ .Content }}</span>
-            <!-- barleyglyph --><p><a href="%BARLEY_URL%" title="Link to %TITLE%">#</a></p><!-- endbarleyglyph -->
+            {{ if .Title }}
+                <h2><a href="{{ .Permalink }}" title="Link to {{ .Title }}">{{ .Title }}</a></h2>
+                <div class="meta">
+                    <span class="meta-publish-date">
+                        <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                    </span>
+                </div>
+                <span class="e-content">{{ .Content }}</span>
+            {{ else }}
+                <span class="e-content">{{ .Content }}</span>
+                <div class="meta">
+                    <span class="meta-publish-date">
+                        <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                    </span>
+                </div>
+                <!-- barleyglyph --><p><a href="{{ .Permalink }}" title="Link to {{ .Title }}">#</a></p><!-- endbarleyglyph -->
+            {{ end }}
+            
         </article>
     {{ end }}
 
@@ -35,14 +45,23 @@
         {{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
         {{ range $list  }}
             <article class="h-entry">
-                <h2><a href="{{ .Permalink }}" title="Link to {{ .Title }}">{{ .Title }}</a></h2>
-                <div class="meta">
-                    <span class="meta-publish-date">
-                        <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
-                    </span>
-                </div>
-                <span class="e-content">{{ .Content }}</span>
-                <!-- barleyglyph --><p><a href="%BARLEY_URL%" title="Link to %TITLE%">#</a></p><!-- endbarleyglyph -->
+                {{ if .Title }}
+                    <h2><a href="{{ .Permalink }}" title="Link to {{ .Title }}">{{ .Title }}</a></h2>
+                    <div class="meta">
+                        <span class="meta-publish-date">
+                            <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                        </span>
+                    </div>
+                    <span class="e-content">{{ .Content }}</span>
+                {{ else }}
+                    <span class="e-content">{{ .Content }}</span>
+                    <div class="meta">
+                        <span class="meta-publish-date">
+                            <i class="barley-icon-time"></i><span class="dt-published">{{ .Date.Format "January 2, 2006" }}</span>
+                        </span>
+                    </div>
+                    <!-- barleyglyph --><p><a href="{{ .Permalink }}" title="Link to {{ .Title }}">#</a></p><!-- endbarleyglyph -->
+                {{ end }}
             </article>
         {{ end }}
     {{ end }}
