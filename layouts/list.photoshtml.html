@@ -19,7 +19,57 @@
                     <h2>Photo Albums</h2>
                     <p>Here are a few albums.</p>
 
-                    {{ partial "photos-list.html" . }}
+                    {{ if .Site.Params.paginate_home }}
+                        {{- $list := where .Pages ".Params.photos" "!=" nil -}}
+                        {{- $len := (len $list) -}}
+                        {{ range $index, $value := $list }}
+                            <div class="photo-album-container">
+                                <div class="photo-album-cover">
+                                    <a href="{{ .Permalink }}">
+                                        {{ range first 1 .Params.photos }}
+                                            <img src="https://micro.blog/photos/480x/{{ . }}">
+                                        {{ end }}
+                                    </a>
+                                </div>
+                                <a class="photo-album-title" href="{{ .Permalink }}">{{ .Title }} <i class="barley-icon-angle-right"></i></a>
+                            </div>
+                        {{ end }}
+
+                            <!-- Paging -->
+                            <div class="paging group">
+                                <!-- previous -->
+                                {{ $pag := $.Paginator }}
+                                    {{ if or $pag.HasPrev $pag.HasNext }}
+                                        {{ if $pag.HasPrev }}
+                                            <a href="{{ $pag.Prev.URL }}" class="newer"><span title="Older Posts"><i class="barley-icon-angle-left"></i></span></a>
+                                        {{ end }}
+                                    <!-- endprevious -->
+
+                                    <!-- next -->
+                                    {{ if $pag.HasNext }}
+                                        <a href="{{ $pag.Next.URL }}" class="older"><span title="Newer Posts"><i class="barley-icon-angle-right"></i></span></a>
+                                    {{ end }}
+                                    <!-- endnext -->
+                                {{ end }}
+                            </div>
+                        
+
+                        {{ else }}
+                            {{- $list := where .Pages ".Params.photos" "!=" nil -}}
+                            {{- $len := (len $list) -}}
+                            {{ range $index, $value := $list }}
+                                <div class="photo-album-container">
+                                    <div class="photo-album-cover">
+                                        <a href="{{ .Permalink }}">
+                                            {{ range first 1 .Params.photos }}
+                                                <img src="https://micro.blog/photos/480x/{{ . }}">
+                                            {{ end }}
+                                        </a>
+                                    </div>
+                                    <a class="photo-album-title" href="{{ .Permalink }}">{{ .Title }} <i class="barley-icon-angle-right"></i></a>
+                                </div>
+                            {{ end }}
+                        {{ end }}
                     
                 </article>
             </div>
