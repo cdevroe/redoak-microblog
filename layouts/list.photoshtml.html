@@ -12,7 +12,7 @@
         <div class="row content">
             <div class="large-8 columns main" id="left-col">
                 <article>
-                    <h2>{{ .Title }}</h2>
+                    <h2>Photos</h2>
 
                     {{ if .Site.Params.paginate_home }}
                         {{- $list := where .Pages ".Params.photos" "!=" nil -}}

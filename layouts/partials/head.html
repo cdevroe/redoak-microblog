@@ -21,14 +21,13 @@
     </title>
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="javascripts/foundation_4/stylesheets/normalize.css" />
+	<link rel="stylesheet" href="{{ "assets/js/foundation_4/javascripts/foundation/normalize.css" | relURL }}?{{ .Site.Params.theme_seconds }}" />
 	
     <link href="{{ "assets/css/style.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
     <link href="{{ "assets/css/microblog.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ "custom.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
 
 	<link rel="stylesheet" href="{{ "assets/css/offcanvas.css" | relURL }}?{{ .Site.Params.theme_seconds }}" />
-	<link rel="stylesheet" href="{{ "assets/css/barlicons.css" | relURL }}?{{ .Site.Params.theme_seconds }}" />
 
     <!-- Google Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
