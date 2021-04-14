@@ -16,4 +16,10 @@ $(document).ready(function() {
     return false;
   });
 
+  /* This shouldn't be needed */
+  $('#sidebarButton').on(events, function (e) {
+    e.preventDefault();
+    $('body').toggleClass('active');
+  });
+
 });
