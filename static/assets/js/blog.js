@@ -17,7 +17,7 @@ $(document).ready(function() {
   });
 
   /* This shouldn't be needed */
-  $('#sidebarButton').on(events, function (e) {
+  $('#sidebarButton').on('click', function (e) {
     e.preventDefault();
     $('body').toggleClass('active');
   });

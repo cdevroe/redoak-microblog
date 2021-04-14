@@ -6,3 +6,5 @@
 #list_results p a {
     text-decoration: underline;
 }
+
+footer img.microicon { max-width: 12px; }
