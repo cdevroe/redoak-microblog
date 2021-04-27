@@ -12,7 +12,17 @@ Red Oak for Micro.blog is freely available to memebers of Micro.blog. Log into y
 
 If you use and like this theme, you can [donate to support its development](http://cdevroe.com/donate).
 
+## Configuration paramaters
+
+- The color of the top strip, links, etc. can be changed using "brand_color" in config.json.  Default value: #d68d20
+
 ## Version History
+
+2021.2.0 - Released: April 27, 2021
+
+- Fix: Icon in footer
+- New: Brand color parameter in config
+- Fix: Archive page
 
 2021.0.14b - Beta build - April 13, 2021
 
