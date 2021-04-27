@@ -20,7 +20,8 @@ If you use and like this theme, you can [donate to support its development](http
 
 2021.2.0 - Released: April 27, 2021
 
-- Fix: Icon in footer
+- Fix: Arrow icon in footer
+- Fix: Micro.blog icon alignment
 - New: Brand color parameter in config
 - Fix: Archive page
 
