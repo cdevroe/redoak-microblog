@@ -8,7 +8,7 @@
     <meta content="{{ .Site.Author.name }}" name="author">
 
     <!-- Red Oak Stuff -->
-    <meta name="microblog-theme" content="Red Oak 2021.0.18b">
+    <meta name="microblog-theme" content="Red Oak 2021.1.0b1">
     <meta name="designer" content="Kyle Ruane and Colin Devroe">
 
     <title>
@@ -61,6 +61,16 @@
     <link rel="microsub" href="https://micro.blog/microsub" />
     <link rel="webmention" href="https://micro.blog/webmention" />
     <link rel="subscribe" href="https://micro.blog/users/follow" />
+
+    {{ if .Site.Params.brand_color }}
+        {{ with .Site.Params.brand_color }}
+		<style type="text/css">
+			.top-strip { background: {{ . }}; }
+			a, .content a, article .meta span a, section .meta span a, #sideNav a, #sideNav a:hover, footer a, a.back-to-top i { color: {{ . }}; }
+			a:hover, .content a:hover, article .meta span a:hover, section .meta span a:hover { color: {{ . }}; border-bottom: 1px dotted {{ . }}; }
+		</style>
+        {{ end }}
+	{{ end }}
 
     <!-- M.b Plugins -->
 	{{ range .Site.Params.plugins_css }}
