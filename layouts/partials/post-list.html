@@ -1,5 +1,5 @@
 {{ if .Site.Params.paginate_home }}
-    {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+    {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") }}
     {{ range $paginator.Pages }}
         <article class="h-entry">
             {{ if .Title }}
@@ -34,7 +34,7 @@
     </div>
 
     {{ else }}
-        {{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
+        {{ $list := where .Site.Pages.ByDate.Reverse "Type" "post" }}
         {{ range $list  }}
             <article class="h-entry">
                 {{ if .Title }}
