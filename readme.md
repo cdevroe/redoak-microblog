@@ -18,6 +18,10 @@ If you use and like this theme, you can [donate to support its development](http
 
 ## Version History
 
+Version 2022.1.0 - Released February 15, 2022
+
+- New: Updated to be a Micro.blog plugin.
+
 2021.2.0 - Released: April 27, 2021
 
 - Fix: Arrow icon in footer
